@@ -1,0 +1,38 @@
+* {
+    background-color: lightgray;
+    margin-top: 0px;
+}
+
+#divImage {
+    margin-top: 10px;
+    text-align: center;
+}
+
+button {
+    margin: 10px 0px 0px 10px;
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    display: block;
+}
+
+button:hover {
+    background-color: green;
+    color: white;
+}
+
+#container {
+    text-align: center;
+    margin: 30px auto 0px auto;
+}
+
+#imageContainer {
+    border: 2px solid black;
+    box-shadow: 5px 5px black;
+    border-radius: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "imagechanger",
+  "version": "1.0.0",
+  "description": "ImageChanger with Responsive Design WEB",
+  "main": "src/app.jsx",
+  "scripts": {
+    "start":"npx servor ./public --reload",
+    "compile":"babel src --out-dir ./public/src --watch"
+  },
+  "author": "Martin Steinkasserer",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.1",
+    "@babel/preset-react": "^7.18.6"
+  }
+}
