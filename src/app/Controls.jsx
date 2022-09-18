@@ -1,4 +1,5 @@
 export function Controls(props) {
+
     const buttons = [
         {
             "name": "Stop Image",

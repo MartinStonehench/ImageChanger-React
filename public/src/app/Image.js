@@ -4,6 +4,7 @@ export function Image(props) {
     id: "imageContainer",
     src: props.image.src,
     width: dimension[0],
-    height: dimension[1]
+    height: dimension[1],
+    onClick: () => props.onClicked()
   }));
 }

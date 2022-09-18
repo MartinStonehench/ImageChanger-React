@@ -7,6 +7,7 @@ export function Image(props) {
                 src={props.image.src}
                 width={dimension[0]}
                 height={dimension[1]}
+                onClick={() => props.onClicked()}
             />
         </div>
     );

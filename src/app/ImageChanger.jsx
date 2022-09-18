@@ -1,3 +1,7 @@
+import { Controls } from './Controls.js';
+import { Image } from './Image.js';
+import { Headline } from './Headline.js';
+
 const images = [
     {
         'src': '../../images/Theraphosa_Stirmi.png',
@@ -20,10 +24,6 @@ const images = [
         'alt': 'Nosferatuspinne'
     }
 ];
-
-import { Controls } from './Controls.js';
-import { Image } from './Image.js';
-import { Headline } from './Headline.js';
 
 export class ImageChanger extends React.Component {
     constructor(props) {
@@ -57,6 +57,7 @@ export class ImageChanger extends React.Component {
         else {
             value.counter = 0;
         }
+
         return value.counter;
     }
 
@@ -68,7 +69,7 @@ export class ImageChanger extends React.Component {
         var value = parseInt(window.prompt('Plesse enter your new inrerval : '));
 
         if (!value) {
-            alert("Please enter a valid number !");
+            this.errorNaN();
             return;
         }
 
@@ -132,6 +133,7 @@ export class ImageChanger extends React.Component {
                 <Image
                     image={currentImage}
                     dimension={this.setDImension()}
+                    onClicked={() => this.onHandleClick()}
                 />
 
                 <Controls
