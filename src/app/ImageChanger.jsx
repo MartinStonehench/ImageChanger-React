@@ -66,7 +66,10 @@ export class ImageChanger extends React.Component {
     }
 
     onHandleSetInterval() {
-        var value = parseInt(window.prompt('Plesse enter your new inrerval : '));
+        var value = window.prompt('Plesse enter your new inrerval : ');
+
+        if (value === null)
+            return;
 
         if (!value) {
             this.errorNaN();
@@ -74,7 +77,7 @@ export class ImageChanger extends React.Component {
         }
 
         this.setState((state) => {
-            state.interval = value;
+            state.interval = parseInt(value);
             return state.interval;
         });
     }
@@ -85,21 +88,27 @@ export class ImageChanger extends React.Component {
     }
 
     onHandleSetWidth() {
-        var width = parseInt(window.prompt('Plesse enter your new width value : '));
+        var width = window.prompt('Plesse enter your new width value : ');
+
+        if (width === null)
+            return;
 
         if (!width)
             this.errorNaN();
 
-        this.setState((state) => state.width = width);
+        this.setState((state) => state.width = parseInt(width));
     }
 
     onHandleSetHeight() {
-        var height = parseInt(window.prompt('Plesse enter your new height value : '));
+        var height = window.prompt('Plesse enter your new height value : ');
+
+        if (height === null)
+            return;
 
         if (!height)
             this.errorNaN();
 
-        this.setState((state) => state.height = height);
+        this.setState((state) => state.height = parseInt(height));
     }
 
     onHandleReset() {

@@ -5,7 +5,7 @@ class App extends React.Component {
         return (
             <div>
                 <ImageChanger
-                    interval={3_000}
+                    interval={1_500}
                     optimized={true}
                 />
             </div>
