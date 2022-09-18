@@ -79,6 +79,8 @@ export class ImageChanger extends React.Component {
 
         this.setState((state) => {
             state.interval = parseInt(value);
+            this.props.interval = value;
+
             return state.interval;
         });
     }
@@ -116,7 +118,7 @@ export class ImageChanger extends React.Component {
         this.setState((state) => {
             state.width = 320;
             state.height = 240;
-            state.interval = 1_000;
+            state.interval = 1_500;
             state.stop = false;
             state.counter = 0;
 
