@@ -15,6 +15,8 @@ const images = [{
   'alt': 'Nosferatuspinne'
 }];
 import { Controls } from './Controls.js';
+import { Image } from './Image.js';
+import { Headline } from './Headline.js';
 export class ImageChanger extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +27,8 @@ export class ImageChanger extends React.Component {
       width: 320,
       height: 240,
       stop: false,
-      interval: 1_000
+      interval: props.interval,
+      optimized: props.optimized
     };
 
     if (!this.state.stop) {
@@ -52,7 +55,7 @@ export class ImageChanger extends React.Component {
   }
 
   onHandleSetInterval() {
-    var value = window.prompt('Plesse enter your new inrerval : ');
+    var value = parseInt(window.prompt('Plesse enter your new inrerval : '));
 
     if (!value) {
       alert("Please enter a valid number !");
@@ -93,15 +96,19 @@ export class ImageChanger extends React.Component {
     });
   }
 
+  setDImension() {
+    return `${this.state.width};${this.state.height}`;
+  }
+
   render() {
+    const currentImage = images[this.state.counter];
     return /*#__PURE__*/React.createElement("div", {
       id: "divImage"
-    }, /*#__PURE__*/React.createElement("h1", null, " ", images[this.state.counter].alt.toUpperCase(), " "), /*#__PURE__*/React.createElement("img", {
-      id: "imageContainer",
-      src: images[this.state.counter].src,
-      alt: images[this.state.counter].alt,
-      width: this.state.width,
-      height: this.state.height
+    }, /*#__PURE__*/React.createElement(Headline, {
+      headline: images[this.state.counter].alt.toUpperCase()
+    }), /*#__PURE__*/React.createElement(Image, {
+      image: currentImage,
+      dimension: this.setDImension()
     }), /*#__PURE__*/React.createElement(Controls, {
       stopImage: () => this.onHandleClick(),
       setWidth: () => this.onHandleSetWidth(),

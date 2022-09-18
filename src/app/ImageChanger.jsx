@@ -22,6 +22,8 @@ const images = [
 ];
 
 import { Controls } from './Controls.js';
+import { Image } from './Image.js';
+import { Headline } from './Headline.js';
 
 export class ImageChanger extends React.Component {
     constructor(props) {
@@ -34,7 +36,8 @@ export class ImageChanger extends React.Component {
             width: 320,
             height: 240,
             stop: false,
-            interval: 1_000
+            interval: props.interval,
+            optimized: props.optimized
         };
 
         if (!this.state.stop) {
@@ -62,7 +65,7 @@ export class ImageChanger extends React.Component {
     }
 
     onHandleSetInterval() {
-        var value = window.prompt('Plesse enter your new inrerval : ');
+        var value = parseInt(window.prompt('Plesse enter your new inrerval : '));
 
         if (!value) {
             alert("Please enter a valid number !");
@@ -109,17 +112,20 @@ export class ImageChanger extends React.Component {
         });
     }
 
+    setDImension() {
+        return `${this.state.width};${this.state.height}`;
+    }
+
     render() {
+        const currentImage = images[this.state.counter];
+
         return (
             <div id="divImage">
-                <h1> {images[this.state.counter].alt.toUpperCase()} </h1>
-
-                <img 
-                    id="imageContainer"
-                    src={images[this.state.counter].src}
-                    alt={images[this.state.counter].alt}
-                    width={this.state.width}
-                    height={this.state.height}
+                <Headline headline={images[this.state.counter].alt.toUpperCase()} />
+                
+                <Image 
+                    image={currentImage}
+                    dimension={this.setDImension()} 
                 />
 
                 <Controls

@@ -4,7 +4,10 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <ImageChanger />
+                <ImageChanger
+                    interval={1_000}
+                    optimized={true}
+                />
             </div>
         );
     }
