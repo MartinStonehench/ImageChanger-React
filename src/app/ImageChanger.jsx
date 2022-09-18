@@ -116,16 +116,22 @@ export class ImageChanger extends React.Component {
         return `${this.state.width};${this.state.height}`;
     }
 
+    onCheck(e) {
+        if (e.target.checked) {
+            alert("Aktiv");
+        }
+    }
+
     render() {
         const currentImage = images[this.state.counter];
 
         return (
             <div id="divImage">
                 <Headline headline={images[this.state.counter].alt.toUpperCase()} />
-                
-                <Image 
+
+                <Image
                     image={currentImage}
-                    dimension={this.setDImension()} 
+                    dimension={this.setDImension()}
                 />
 
                 <Controls

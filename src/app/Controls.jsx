@@ -1,16 +1,32 @@
 export function Controls(props) {
+    const buttons = [
+        {
+            "name": "Stop Image",
+            "event": () => props.stopImage()
+        },
+        {
+            "name": "Set Interval",
+            "event": () => props.setInterval()
+        },
+        {
+            "name": "Set Width",
+            "event": () => props.setWidth()
+        },
+        {
+            "name": "Set Height",
+            "event": () => props.setHeight()
+        },
+        {
+            "name": "Reset",
+            "event": () => props.setReset()
+        }
+    ];
+
     return (
         <div id="container">
-            <button
-                onClick={() => props.stopImage()}> Stop Image </button>
-            <button
-                onClick={() => props.setInterval()}> Set Interval </button>
-            <button
-                onClick={() => props.setWidth()}> Set Width </button>
-            <button
-                onClick={() => props.setHeight()}> Set Height </button>
-            <button
-                onClick={() => props.setReset()} > Reset </button>
+            {buttons.map((item) => {
+                return <button onClick={item.event}> {item.name} </button>
+            })};
         </div>
     );
 }

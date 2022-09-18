@@ -1,15 +1,25 @@
 export function Controls(props) {
+  const buttons = [{
+    "name": "Stop Image",
+    "event": () => props.stopImage()
+  }, {
+    "name": "Set Interval",
+    "event": () => props.setInterval()
+  }, {
+    "name": "Set Width",
+    "event": () => props.setWidth()
+  }, {
+    "name": "Set Height",
+    "event": () => props.setHeight()
+  }, {
+    "name": "Reset",
+    "event": () => props.setReset()
+  }];
   return /*#__PURE__*/React.createElement("div", {
     id: "container"
-  }, /*#__PURE__*/React.createElement("button", {
-    onClick: () => props.stopImage()
-  }, " Stop Image "), /*#__PURE__*/React.createElement("button", {
-    onClick: () => props.setInterval()
-  }, " Set Interval "), /*#__PURE__*/React.createElement("button", {
-    onClick: () => props.setWidth()
-  }, " Set Width "), /*#__PURE__*/React.createElement("button", {
-    onClick: () => props.setHeight()
-  }, " Set Height "), /*#__PURE__*/React.createElement("button", {
-    onClick: () => props.setReset()
-  }, " Reset "));
+  }, buttons.map(item => {
+    return /*#__PURE__*/React.createElement("button", {
+      onClick: item.event
+    }, " ", item.name, " ");
+  }), ";");
 }

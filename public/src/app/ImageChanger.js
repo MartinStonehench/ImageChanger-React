@@ -100,6 +100,12 @@ export class ImageChanger extends React.Component {
     return `${this.state.width};${this.state.height}`;
   }
 
+  onCheck(e) {
+    if (e.target.checked) {
+      alert("Aktiv");
+    }
+  }
+
   render() {
     const currentImage = images[this.state.counter];
     return /*#__PURE__*/React.createElement("div", {
