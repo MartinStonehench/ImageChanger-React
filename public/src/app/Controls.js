@@ -6,6 +6,9 @@ export function Controls(props) {
     "name": "Add Image",
     "event": () => props.addImage()
   }, {
+    "name": "View all Images",
+    "event": () => props.viewAllImages()
+  }, {
     "name": "Set Interval",
     "event": () => props.setInterval()
   }, {
@@ -17,6 +20,9 @@ export function Controls(props) {
   }, {
     "name": "Reset",
     "event": () => props.setReset()
+  }, {
+    "name": "About",
+    "event": () => props.about()
   }];
   return /*#__PURE__*/React.createElement("div", {
     id: "container"

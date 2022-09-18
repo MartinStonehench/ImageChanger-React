@@ -51,7 +51,7 @@ export class ImageChanger extends React.Component {
     return value.counter;
   }
 
-  onHandleClick() {
+  onHandleStopImage() {
     this.setState(state => state.stop = !state.stop);
   }
 
@@ -104,7 +104,19 @@ export class ImageChanger extends React.Component {
   }
 
   onHandleAddImage() {
+    this.notImplemented();
+  }
+
+  onHandleViewAllImages() {
+    this.notImplemented();
+  }
+
+  notImplemented() {
     alert("At this moment not implemented yet");
+  }
+
+  showAbout() {
+    alert("This application has been developed by Martin Steinkasserer\n\nVersion 1.0.0 with React");
   }
 
   render() {
@@ -118,12 +130,14 @@ export class ImageChanger extends React.Component {
       dimension: this.setDImension(),
       onClicked: () => this.onHandleClick()
     }), /*#__PURE__*/React.createElement(Controls, {
-      stopImage: () => this.onHandleClick(),
+      stopImage: () => this.onHandleStopImage(),
       setWidth: () => this.onHandleSetWidth(),
       setHeight: () => this.onHandleSetHeight(),
       setReset: () => this.onHandleReset(),
       setInterval: () => this.onHandleSetInterval(),
-      addImage: () => this.onHandleAddImage()
+      addImage: () => this.onHandleAddImage(),
+      viewAllImages: () => this.onHandleViewAllImages(),
+      about: () => this.showAbout()
     }), /*#__PURE__*/React.createElement(Copyright, {
       message: "Developed by Martin Steinkasserer, (c) 2022 with React Components"
     }));
