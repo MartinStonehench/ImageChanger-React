@@ -18,8 +18,8 @@ export function Controls(props) {
   return /*#__PURE__*/React.createElement("div", {
     id: "container"
   }, buttons.map(item => {
-    return /*#__PURE__*/React.createElement("button", {
+    return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("button", {
       onClick: item.event
-    }, " ", item.name, " ");
-  }), ";");
+    }, " ", item.name, " "), /*#__PURE__*/React.createElement("br", null));
+  }));
 }

@@ -26,8 +26,13 @@ export function Controls(props) {
     return (
         <div id="container">
             {buttons.map((item) => {
-                return <button onClick={item.event}> {item.name} </button>
-            })};
+                return (
+                    <div>
+                        <button onClick={item.event}> {item.name} </button>
+                        <br />
+                    </div>
+                );
+            })}
         </div>
     );
 }

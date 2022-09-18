@@ -1,6 +1,7 @@
 import { Controls } from './Controls.js';
 import { Image } from './Image.js';
 import { Headline } from './Headline.js';
+import { Copyright } from './Copyright.js';
 const images = [{
   'src': '../../images/Theraphosa_Stirmi.png',
   'alt': 'Theraphosa Stirmi'
@@ -102,12 +103,6 @@ export class ImageChanger extends React.Component {
     return `${this.state.width};${this.state.height}`;
   }
 
-  onCheck(e) {
-    if (e.target.checked) {
-      alert("Aktiv");
-    }
-  }
-
   render() {
     const currentImage = images[this.state.counter];
     return /*#__PURE__*/React.createElement("div", {
@@ -124,6 +119,8 @@ export class ImageChanger extends React.Component {
       setHeight: () => this.onHandleSetHeight(),
       setReset: () => this.onHandleReset(),
       setInterval: () => this.onHandleSetInterval()
+    }), /*#__PURE__*/React.createElement(Copyright, {
+      message: "Developed by Martin Steinkasserer, (c) 2022 with React Components"
     }));
   }
 

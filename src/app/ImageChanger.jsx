@@ -1,6 +1,7 @@
 import { Controls } from './Controls.js';
 import { Image } from './Image.js';
 import { Headline } from './Headline.js';
+import { Copyright } from './Copyright.js';
 
 const images = [
     {
@@ -126,12 +127,6 @@ export class ImageChanger extends React.Component {
         return `${this.state.width};${this.state.height}`;
     }
 
-    onCheck(e) {
-        if (e.target.checked) {
-            alert("Aktiv");
-        }
-    }
-
     render() {
         const currentImage = images[this.state.counter];
 
@@ -151,6 +146,10 @@ export class ImageChanger extends React.Component {
                     setHeight={() => this.onHandleSetHeight()}
                     setReset={() => this.onHandleReset()}
                     setInterval={() => this.onHandleSetInterval()}
+                />
+
+                <Copyright 
+                    message="Developed by Martin Steinkasserer, (c) 2022 with React Components" 
                 />
             </div>
         );
