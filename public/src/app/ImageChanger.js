@@ -108,7 +108,7 @@ export class ImageChanger extends React.Component {
   }
 
   onHandleViewAllImages() {
-    this.notImplemented();
+    window.location.href = "./allimages.html";
   }
 
   notImplemented() {
@@ -128,7 +128,7 @@ export class ImageChanger extends React.Component {
     }), /*#__PURE__*/React.createElement(Image, {
       image: currentImage,
       dimension: this.setDImension(),
-      onClicked: () => this.onHandleClick()
+      onClicked: () => this.onHandleStopImage()
     }), /*#__PURE__*/React.createElement(Controls, {
       stopImage: () => this.onHandleStopImage(),
       setWidth: () => this.onHandleSetWidth(),

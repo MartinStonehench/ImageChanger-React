@@ -132,7 +132,7 @@ export class ImageChanger extends React.Component {
     }
 
     onHandleViewAllImages() {
-        this.notImplemented();
+        window.location.href="./allimages.html";
     }
 
     notImplemented() {
@@ -153,7 +153,7 @@ export class ImageChanger extends React.Component {
                 <Image
                     image={currentImage}
                     dimension={this.setDImension()}
-                    onClicked={() => this.onHandleClick()}
+                    onClicked={() => this.onHandleStopImage()}
                 />
 
                 <Controls
