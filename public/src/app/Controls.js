@@ -3,6 +3,9 @@ export function Controls(props) {
     "name": "Stop Image",
     "event": () => props.stopImage()
   }, {
+    "name": "Add Image",
+    "event": () => props.addImage()
+  }, {
     "name": "Set Interval",
     "event": () => props.setInterval()
   }, {

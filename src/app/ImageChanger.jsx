@@ -127,6 +127,10 @@ export class ImageChanger extends React.Component {
         return `${this.state.width};${this.state.height}`;
     }
 
+    onHandleAddImage() {
+        alert("At this moment not implemented yet");
+    }
+
     render() {
         const currentImage = images[this.state.counter];
 
@@ -146,6 +150,7 @@ export class ImageChanger extends React.Component {
                     setHeight={() => this.onHandleSetHeight()}
                     setReset={() => this.onHandleReset()}
                     setInterval={() => this.onHandleSetInterval()}
+                    addImage={() => this.onHandleAddImage()}
                 />
 
                 <Copyright 

@@ -103,6 +103,10 @@ export class ImageChanger extends React.Component {
     return `${this.state.width};${this.state.height}`;
   }
 
+  onHandleAddImage() {
+    alert("At this moment not implemented yet");
+  }
+
   render() {
     const currentImage = images[this.state.counter];
     return /*#__PURE__*/React.createElement("div", {
@@ -118,7 +122,8 @@ export class ImageChanger extends React.Component {
       setWidth: () => this.onHandleSetWidth(),
       setHeight: () => this.onHandleSetHeight(),
       setReset: () => this.onHandleReset(),
-      setInterval: () => this.onHandleSetInterval()
+      setInterval: () => this.onHandleSetInterval(),
+      addImage: () => this.onHandleAddImage()
     }), /*#__PURE__*/React.createElement(Copyright, {
       message: "Developed by Martin Steinkasserer, (c) 2022 with React Components"
     }));
