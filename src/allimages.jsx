@@ -48,7 +48,7 @@ class AllImages extends React.Component {
                     })}
                 </div>
 
-                <div>
+                <div style={{"text-align":"center"}}>
                     <button onClick={() => this.onHandleReturnToMain()}> Back </button>
                 </div>
             </div>

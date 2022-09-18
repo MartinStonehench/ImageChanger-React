@@ -38,7 +38,11 @@ class AllImages extends React.Component {
         height: "240",
         onClick: () => this.onHandleClick(item.alt)
       });
-    })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("button", {
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        "text-align": "center"
+      }
+    }, /*#__PURE__*/React.createElement("button", {
       onClick: () => this.onHandleReturnToMain()
     }, " Back ")));
   }

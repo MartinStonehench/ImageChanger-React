@@ -95,6 +95,7 @@ export class ImageChanger extends React.Component {
       state.height = 240;
       state.interval = 1_000;
       state.stop = false;
+      state.counter = 0;
       return state;
     });
   }
