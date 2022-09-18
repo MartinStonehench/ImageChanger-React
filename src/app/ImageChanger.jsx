@@ -135,7 +135,7 @@ export class ImageChanger extends React.Component {
     }
 
     onHandleViewAllImages() {
-        window.location.href="./allimages.html";
+        window.location.href = "./allimages.html";
     }
 
     notImplemented() {
