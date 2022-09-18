@@ -56,6 +56,8 @@ export class ImageChanger extends React.Component {
   }
 
   onHandleSetInterval() {
+    this.notImplemented();
+    return;
     var value = window.prompt('Plesse enter your new inrerval : ');
     if (value === null) return;
 
@@ -66,7 +68,6 @@ export class ImageChanger extends React.Component {
 
     this.setState(state => {
       state.interval = parseInt(value);
-      this.props.interval = value;
       return state.interval;
     });
   }
